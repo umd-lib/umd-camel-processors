@@ -1,13 +1,13 @@
 package edu.umd.lib.camel.processors;
 
-import edu.umd.lib.fcrepo.AuthTokenService;
+import edu.umd.lib.fcrepo.services.AuthTokenService;
 import org.apache.camel.Exchange;
 import org.apache.camel.Message;
 import org.apache.camel.Processor;
 
 import java.util.Date;
 
-import static edu.umd.lib.fcrepo.LdapRoleLookupService.ADMIN_ROLE;
+import static edu.umd.lib.fcrepo.services.LdapRoleLookupService.ADMIN_ROLE;
 import static java.time.Instant.now;
 import static java.time.temporal.ChronoUnit.HOURS;
 

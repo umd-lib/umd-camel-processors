@@ -1,10 +1,10 @@
 package edu.umd.lib.camel.utils;
 
+import jakarta.ws.rs.core.Link;
 import org.apache.http.Header;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.core.Link;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;

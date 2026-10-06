@@ -6,7 +6,7 @@
 
   <groupId>edu.umd.lib</groupId>
   <artifactId>umd-camel-processors</artifactId>
-  <version>1.1.4</version>
+  <version>2.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>umd-camel-processors</name>
@@ -14,12 +14,11 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <camel.version>2.25.4</camel.version>
+    <maven.compiler.source>25</maven.compiler.source>
+    <maven.compiler.target>25</maven.compiler.target>
+    <camel.version>4.21.0</camel.version>
     <jena.version>3.16.0</jena.version>
-    <junit.version>4.13</junit.version>
-    <ldpath.version>3.3.0</ldpath.version>
+    <junit.version>4.13.1</junit.version>
     <umd.fcrepo.auth.utils.version>1.1.0</umd.fcrepo.auth.utils.version>
   </properties>
 
@@ -29,12 +28,13 @@
       <!-- placed first to take precedence over versions from other libraries POMs -->
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpclient</artifactId>
-      <version>4.5.13</version>
+      <version>4.5.14</version>
     </dependency>
     <dependency>
       <groupId>edu.umd.lib</groupId>
-      <artifactId>umd-fcrepo-auth-utils</artifactId>
-      <version>${umd.fcrepo.auth.utils.version}</version>
+      <artifactId>umd-fcrepo-webapp</artifactId>
+      <version>3.0.0-SNAPSHOT</version>
+      <classifier>lib</classifier>
       <type>jar</type>
     </dependency>
     <dependency>
@@ -49,12 +49,6 @@
       <artifactId>camel-core</artifactId>
       <version>${camel.version}</version>
     </dependency>
-    <dependency>
-      <groupId>org.apache.camel</groupId>
-      <artifactId>camel-test</artifactId>
-      <version>${camel.version}</version>
-      <scope>test</scope>
-    </dependency>
     <!-- Apache Jena -->
     <dependency>
       <groupId>org.apache.jena</groupId>
@@ -68,35 +62,6 @@
         <exclusion>
           <groupId>org.apache.logging.log4j</groupId>
           <artifactId>log4j-slf4j-impl</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <!-- LDPath -->
-    <dependency>
-      <groupId>org.apache.marmotta</groupId>
-      <artifactId>ldpath-core</artifactId>
-      <version>${ldpath.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.marmotta</groupId>
-      <artifactId>ldclient-provider-rdf</artifactId>
-      <version>${ldpath.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.marmotta</groupId>
-      <artifactId>ldpath-backend-linkeddata</artifactId>
-      <version>${ldpath.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.semarglproject</groupId>
-      <artifactId>semargl-sesame</artifactId>
-      <version>0.6.1</version>
-      <exclusions>
-        <!-- Excluding sesame-rio-api, because semargl-sesame uses an older version that
-            is incompatible with the version used by marmotta -->
-        <exclusion>
-          <groupId>org.openrdf.sesame</groupId>
-          <artifactId>sesame-rio-api</artifactId>
         </exclusion>
       </exclusions>
     </dependency>
